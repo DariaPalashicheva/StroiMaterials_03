@@ -1,0 +1,22 @@
+﻿<Window x:Class="StroiMaterials_03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StroiMaterials_03"
+        mc:Ignorable="d"
+        Title="ООО Строй материалы" Height="450" Width="800" MinHeight="450" MinWidth="800" WindowStartupLocation="CenterScreen" Icon="/Resources/icon.ico" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#FF76E383">
+            <Image Source="\Resources/logo.png" HorizontalAlignment="Left"/>
+            <TextBlock Text="Строй материалы" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="38"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame"/>
+        </Grid>
+    </Grid>
+</Window>
