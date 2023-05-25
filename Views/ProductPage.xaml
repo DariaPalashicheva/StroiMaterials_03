@@ -16,7 +16,16 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBlock Text="Фильтровать по производителю" Width="120"/>
-            <ComboBox x:Name="ComboManufacturer" Margin="10 0 10 0"/>
+            <ComboBox x:Name="ComboManufacturer" Margin="10 0 10 0">
+                <TextBlock Text="Все производители"/>
+                <TextBlock Text="Husqvarna"/>
+                <TextBlock Text="Vinylon"/>
+                <TextBlock Text="ЛСР"/>
+                <TextBlock Text="MixMaster"/>
+                <TextBlock Text="Hesler"/>
+                <TextBlock Text="Armero"/>
+                <TextBlock Text="KILIMGRIN"/>
+            </ComboBox>
             <TextBlock Text="Поиск" TextWrapping="Wrap" Margin="10 0 10 0"/>
             <TextBox/>
             <Button Margin="10 0 0 0" Content="Найти"/>
