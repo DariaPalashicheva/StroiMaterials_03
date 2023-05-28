@@ -5,18 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StroiMaterials_03"
         mc:Ignorable="d"
-        Title="ООО Строй материалы" Height="450" Width="800" MinHeight="450" MinWidth="800" WindowStartupLocation="CenterScreen" Icon="/Resources/icon.ico" >
+        Title="ООО Строй материалы" Height="1050" Width="1400" MinHeight="1050" MinWidth="1400" WindowStartupLocation="CenterScreen" Icon="/Resources/icon.ico" >
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="#FF76E383">
             <Image Source="\Resources/logo.png" HorizontalAlignment="Left"/>
             <TextBlock Text="Строй материалы" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="38"/>
         </Grid>
-        <Grid Grid.Row="1">
-            <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame"/>
+        <Grid Grid.Row="1" Background="#FF76E383">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Content="Товары" x:Name="BtnProduct" Click="BtnProduct_Click"/>
+            </StackPanel>
         </Grid>
+        <Grid Grid.Row="2">
+            <Frame NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered" x:Name="MainFrame"/>
+        </Grid>
+        <Button Content="Назад" Name="BtnBack" Click="BtnBack_Click" HorizontalAlignment="Right" Margin="0 0 10 0"/>
     </Grid>
 </Window>

@@ -10,5 +10,6 @@ namespace StroiMaterials_03.ApplicationData
     internal class AppFrame
     {
         public static Frame MainFrame;
+        public static int DostupRole;
     }
 }

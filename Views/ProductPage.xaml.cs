@@ -26,6 +26,25 @@ namespace StroiMaterials_03.Views
             InitializeComponent();
             // Вывод списка из БД
             DGrid.ItemsSource = TradeEntities.GetContext().Product.ToList();
+            
+            if (AppFrame.DostupRole == 1)
+            {
+                BtnAdd.Visibility = Visibility.Visible;
+                BtnDelete.Visibility = Visibility.Visible;
+                ColumnEdit.Visibility = Visibility.Visible;
+            }
+            if (AppFrame.DostupRole == 2)
+            {
+                BtnAdd.Visibility = Visibility.Hidden;
+                BtnDelete.Visibility = Visibility.Hidden;
+                ColumnEdit.Visibility = Visibility.Hidden;
+            }
+            if (AppFrame.DostupRole == 3)
+            {
+                BtnAdd.Visibility = Visibility.Hidden;
+                BtnDelete.Visibility = Visibility.Hidden;
+                ColumnEdit.Visibility = Visibility.Hidden;
+            }
         }
         // Обновление данных списка
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -57,6 +76,16 @@ namespace StroiMaterials_03.Views
                 }
             }
 
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AppFrame.MainFrame.Navigate(new ProductAddEdit(null));
+        }
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            AppFrame.MainFrame.Navigate(new ProductAddEdit((sender as Button).DataContext as Product));
         }
     }
 }

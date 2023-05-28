@@ -25,8 +25,45 @@ namespace StroiMaterials_03
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new ProductPage());
+            MainFrame.Navigate(new LoginPage());
             AppFrame.MainFrame = MainFrame;
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.GoBack();
+        }
+
+        private void MainFrame_ContentRendered(object sender, EventArgs e)
+        {
+            if(MainFrame.CanGoBack)
+            {
+                BtnBack.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BtnBack.Visibility = Visibility.Hidden;
+                BtnProduct.Visibility = Visibility.Hidden;
+                return;
+            }
+
+            if (AppFrame.DostupRole == 1)
+            {
+                BtnProduct.Visibility = Visibility.Visible;
+            }
+            if (AppFrame.DostupRole == 2)
+            {
+                BtnProduct.Visibility = Visibility.Visible;
+            }
+            if (AppFrame.DostupRole == 3)
+            {
+                BtnProduct.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void BtnProduct_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ProductPage());
         }
     }
 }

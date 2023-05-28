@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:StroiMaterials_03.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="900" d:DesignWidth="1400"
       Title="ProductPage" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid Background="White">
@@ -33,13 +33,38 @@
         <DataGrid x:Name="DGrid" AutoGenerateColumns="False" IsReadOnly="True" MinRowHeight="100" Grid.Row="1">
             <DataGrid.Columns >
                 <DataGridTextColumn Header="Артикль" Binding="{Binding ProductArticleNumber}" Width="*"/>
-                <DataGridTextColumn Header="Наименование" Binding="{Binding ProductName}" Width="*" />
-                <DataGridTextColumn Header="Описание" Binding="{Binding ProductDescription}" Width="200">
+                <DataGridTextColumn Header="Наименование" Binding="{Binding ProductName}" Width="*" ElementStyle="{StaticResource wrap}" />
+                <DataGridTextColumn Header="Описание" Binding="{Binding ProductDescription}" Width="120">
                 </DataGridTextColumn>
+                <DataGridTextColumn Header="Категория" Binding="{Binding ProductCategory}" Width="120">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding ImagePath}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Производитель" Binding="{Binding ProductManufacturer}" Width="*"/>
-                <DataGridTextColumn Header="Цена" Binding="{Binding ProductCost}" Width="*"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding ProductCost, StringFormat=0.00}" Width="*"/>
+                <DataGridTextColumn Header="Скидка" Binding="{Binding ProductDiscountAmount}" Width="*"/>
+                <DataGridTextColumn Header="Кол-во" Binding="{Binding ProductQuantityInStock}" Width="*"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding ProductStatus}" Width="*"/>
+                <DataGridTemplateColumn Width="*" x:Name="ColumnEdit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" x:Name="BtnEdit" Click="BtnEdit_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Button Grid.Row="2" Name="BtnDelete" Click="BtnDelete_Click" Content="Удалить" HorizontalAlignment="Right" Margin="0 0 10 0"/>
+        <Button Grid.Row="2" Name="BtnAdd" Click="BtnAdd_Click" Content="Добавить" HorizontalAlignment="Center" Margin="0 0 10 0"/>
     </Grid>
 </Page>

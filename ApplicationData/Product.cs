@@ -30,6 +30,13 @@ namespace StroiMaterials_03.ApplicationData
         public Nullable<byte> ProductDiscountAmount { get; set; }
         public int ProductQuantityInStock { get; set; }
         public string ProductStatus { get; set; }
+        public string ImagePath
+        {
+            get
+            {
+                return "/Resources/" + ProductPhoto;
+            }
+        }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Order { get; set; }

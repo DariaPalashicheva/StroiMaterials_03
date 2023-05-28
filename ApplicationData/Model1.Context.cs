@@ -22,7 +22,6 @@ namespace StroiMaterials_03.ApplicationData
             if (_context == null)
                 _context = new TradeEntities();
             return _context;
-
         }
 
         public TradeEntities()

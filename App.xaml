@@ -10,6 +10,12 @@
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="VerticalAlignment" Value="center"/>
         </Style>
+        <Style TargetType="TextBlock" x:Key="TB">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="VerticalAlignment" Value="center"/>
+        </Style>
         <Style TargetType="Button">
             <Setter Property="Background" Value="#FF498C51"/>
             <Setter Property="Foreground" Value="White"/>
@@ -23,9 +29,14 @@
             <Setter Property="FontSize" Value="14"/>
         </Style>
         <Style TargetType="TextBox">
-            <Setter Property="Width" Value="200"/>
-            <Setter Property="Height" Value="30"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="wrap">
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
     </Application.Resources>
